@@ -1,0 +1,18 @@
+@import 'helpers.scss';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(16px);
+  padding: rem(8px);
+
+  .menuCategory {
+    font-weight: 700;
+    font-size: rem(14px);
+    color: $dark-900;
+    line-height: rem(21px);
+    letter-spacing: rem(0.1px);
+    margin-top: rem(16px);
+    margin-bottom: rem(14px);
+  }
+}

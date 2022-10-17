@@ -1,0 +1,55 @@
+{
+  "copyright": "Copyright © {{date}} Storency. All Rights Reserved.",
+  "algolia": {
+    "apiKey": "",
+    "indexName": "storency-ui",
+    "inputSelector": "#algolia-search"
+  },
+  "author": {
+    "name": "Yaroslav Romanenko",
+    "github": "https://github.com/wallwhite",
+    "email": "yarikrom05@gmail.com"
+  },
+  "repo": {
+    "url": "https://github.com/somereponame",
+    "blobUrl": "https://github.com/somereponame/blob/master"
+  },
+  "social": {
+    "github": "https://github.com/Storency",
+    "twitter": "https://twitter.com",
+    "instagram": "https://instagram.com"
+  },
+  "seo": {
+    "title": "Storency UI",
+    "titleTemplate": "%s - Storency UI",
+    "description": "Storency UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
+    "siteUrl": "#",
+    "twitter": {
+      "handle": "@dummy",
+      "site": "@dummy",
+      "cardType": "summary_large_image"
+    },
+    "openGraph": {
+      "type": "website",
+      "locale": "en_US",
+      "url": "#",
+      "title": "Storency UI",
+      "description": "Simple, Modular and Accessible UI Documentation for your React Project.",
+      "site_name": "Storency UI: Simple, Modular and Accessible UI Documentation for your React Project.",
+      "images": [
+        {
+          "url": "og-image.png",
+          "width": 1240,
+          "height": 480,
+          "alt": "Storency UI: Simple, Modular and Accessible UI Documentation for your React Project."
+        },
+        {
+          "url": "twitter-og-image.png",
+          "width": 1012,
+          "height": 506,
+          "alt": "Storency UI: Simple, Modular and Accessible UI Documentation for your React Project."
+        }
+      ]
+    }
+  }
+}

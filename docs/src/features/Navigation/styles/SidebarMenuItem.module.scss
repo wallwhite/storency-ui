@@ -1,0 +1,21 @@
+@import 'helpers.scss';
+
+.menuItem {
+  display: inline-flex;
+  width: 100%;
+  line-height: 21px;
+  padding: rem(4px) rem(10px) rem(4px) rem(16px);
+  border-left: 1px solid $border;
+  color: $dark-700;
+  transition: all .1s;
+
+  &:hover {
+    border-left: 1px solid $dark-600;
+  }
+
+  &.active {
+    color: $primary-500;
+    font-weight: 600;
+    border-left: 1px solid $primary-500;
+  }
+}

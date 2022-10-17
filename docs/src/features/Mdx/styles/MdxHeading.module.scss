@@ -1,0 +1,69 @@
+@import 'helpers.scss';
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  color: $dark-900;
+  margin-bottom: rem(12px);
+
+  &:hover {
+    .hashLink {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: rem(28px);
+    font-weight: 800;
+  }
+  h2 {
+    font-size: rem(24px);
+  }
+  h3 {
+    font-size: rem(20px);
+  }
+  h4 {
+    font-size: rem(18px);
+  }
+  h5 {
+    font-size: rem(16px);
+  }
+  h6 {
+    font-size: rem(14px);
+  }
+
+  .hashLink {
+    color: $dark-600;
+    padding-right: rem(8px);
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all .3s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .hash {
+    @include size(rem(24px));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $border;
+    border-radius: 8px;
+  }
+
+}

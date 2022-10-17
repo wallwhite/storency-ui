@@ -1,0 +1,61 @@
+@import 'helpers.scss';
+
+.formInput {
+    display: flex;
+}
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    align-items: center;
+    padding: rem(12) rem(16);
+    height: 48px;
+    border: 2px solid $dark-400;
+    border-radius: 12px;
+    &.invalid {
+        border-color: var(--chakra-colors-red-500);
+    }
+    &::placeholder {
+        color: $dark-500;
+    }
+}
+
+.inputPassword {
+    padding-right: 36px;
+}
+
+.additionElement {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &.left {
+        left: 12px;
+    }
+    &.right {
+        right: 12px;
+    }
+}
+
+.errorMessage {
+    display: flex;
+    font-size: rem(12);
+    color: $alerts-error;
+    padding: 0 16px;
+    margin-top: 4px;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.formRow {
+    width: 100%;
+    margin-bottom: rem(32);
+}
+
+

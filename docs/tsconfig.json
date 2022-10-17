@@ -1,0 +1,36 @@
+{
+  "extends": "../tsconfig.json",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".contentlayer/generated"],
+  "exclude": ["node_modules","scripts"],
+  "compilerOptions": {
+    "allowJs": true,
+    "isolatedModules": true,
+    /* files are emitted by babel */
+    "removeComments": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "types": ["react"],
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/styles/*": ["./styles/*"],
+      "@/pages/*": ["./pages/*"],
+      "@/configs/*": ["./configs/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"],
+      "@storency-ui/components": ["../packages/components/src"],
+      "@storency-ui/hooks": ["../packages/hooks/src"],
+      "@storency-ui/constants/*": ["../packages/constants/src"],
+      "@storency-ui/types/*": ["../packages/types/src"],
+      "@storency-ui/utils/*": ["../packages/utils/src"],
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+}

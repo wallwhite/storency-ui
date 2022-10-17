@@ -1,0 +1,21 @@
+{
+  "name": "@storency-ui/hooks",
+  "author": "Storency Team",
+  "main": "./src/index.js",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Hooks for React components.",
+  "private": false,
+  "keywords": [
+    "react",
+    "react-component",
+    "storency",
+    "hooks"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

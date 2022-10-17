@@ -1,0 +1,7 @@
+{
+  "name": "@storency-ui/constants",
+  "author": "Storency Team",
+  "main": "./src/index.js",
+  "version": "1.0.0",
+  "license": "MIT"
+}

@@ -1,0 +1,127 @@
+@import 'helpers';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: rem($defaultContainerIdent) 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 rem(266px);
+  width: 100%;
+  @include rTablet {
+    padding-right: 0;
+  }
+}
+
+.contentWithToc {
+  padding: 0 rem(266px);
+}
+
+.sidebar {
+  display: flex;
+  position: fixed;
+  width: rem(266px);
+  height: 100vh;
+  padding: 0 rem(8px);
+  overflow-y: auto;
+  z-index: 2;
+}
+
+.tocBar {
+  width: rem(250px);
+  position: fixed;
+  right: calc(((100vw - rem($defaultContainerWidth)) / 2) + rem($defaultContainerIdent + 4px));
+  margin-top: rem(14px);
+  z-index: 2;
+  @include rDesktopLarge {
+    right: rem($defaultContainerIdent + 4px);
+  }
+  @include rTablet {
+    display: none;
+  }
+}
+
+.entityHeader {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: rem(24px);
+
+}
+
+.externalLinksList {
+  display: flex;
+  width: 100%;
+  margin-top: rem(24px);
+}
+
+.externalLink {
+  display: inline-flex;
+  align-items: center;
+  color: $dark-600;
+  padding: rem(8px) rem(16px);
+  border: 1px solid $border;
+  border-radius: rem(8px);
+  transition: all .3s;
+
+  &:hover{
+    color: $dark-800;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px -2px colorrgba($dark-500, 0.3);
+  }
+
+  &:active{
+    background: $dark-300;
+  }
+
+  > svg {
+    margin-right: rem(12px) ;
+  }
+}
+
+.sectionTabs {
+  display: flex;
+  width: 100%;
+  margin-bottom: rem(24px);
+  border-bottom: 1px solid $border;
+
+  .tab {
+    display: inline-flex;
+    position: relative;
+    padding: rem(12px) rem(24px);
+    color: $dark-600;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    margin-bottom: rem(-1px);
+    margin-right: rem(12px);
+    @include pseudo-element {
+      width: 100%;
+      height: rem(2px);
+      bottom: rem(-2px);
+      left: 0;
+      background: transparent;
+      border-radius: 2px;
+      transform: translateY(1px);
+      transition: all .3s;
+    }
+
+    &:hover {
+      @include pseudo-element {
+        background: $dark-500;
+        transform: translateY(0);
+      }
+    }
+
+    &.active {
+      color: $dark-800;
+      @include pseudo-element {
+        background: $primary-500;
+        transform: translateY(0);
+      }
+    }    
+  }
+}

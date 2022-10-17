@@ -1,0 +1,19 @@
+@import 'helpers.scss';
+
+.categories {
+  padding: rem(56px) 0;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(16px);
+  justify-content: center;
+  max-width: rem(1080px);
+  margin: 0 auto;
+}
+
+.listItem {
+  max-width: rem(256px);
+  width: 100%;
+}

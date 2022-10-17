@@ -1,0 +1,51 @@
+@import 'helpers.scss';
+
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $dark-50;
+  border: rem(2px) solid $border;
+  border-radius: rem(20px);
+    
+  &:hover {
+    .titleArrow {
+      transform: translateX(10px)
+    }
+  }
+}
+
+.image {
+  @include size(200px);
+  margin-top: rem(16px);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: rem(18px);
+  gap: rem(12px);
+}
+
+.title {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  color: $dark-900;
+}
+
+.titleArrow {
+  @include size(rem(18px));
+  color: $dark-600;
+  transition: all 0.3s;
+  svg {
+    @include size(100%);
+  }
+}
+
+.description {
+  font-family: $montserrat-font;
+  color: $dark-600;
+  letter-spacing: rem(0.1px);
+}

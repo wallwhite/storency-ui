@@ -1,0 +1,95 @@
+@import 'helpers.scss';
+
+$sizeKeys: 's', 'm', 'l';
+
+$button-padding-x: (
+    s: 16px,
+    m: 16px,
+    l: 24px,
+);
+
+$button-padding-y: (
+    s: 6px,
+    m: 12px,
+    l: 16px,
+);
+
+$button-font-size: (
+    s: 12px,
+    m: 14px,
+    l: 16px,
+);
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    height: fit-content;
+    line-height: 1;
+    border-radius: rem(90);
+    transition: all 0.3s;
+    margin: 3px;
+    
+    .wide {
+        width: 100%;
+    }
+
+    &.default {
+        background: $dark-900;
+        color: $dark-50;
+        &:hover {
+            background: $dark-800;
+        }
+        &:focus {
+            box-shadow: 0 0 0 3px colorRgba($dark-900, 0.2);
+        }
+        &:active {
+            background: $dark-200;
+            color: $dark-900;
+        }
+    }
+
+    &.primary {
+        background: $primary-500;
+        color: $dark-200;
+        &:hover {
+            background: $primary-600;
+        }
+        &:focus {
+            box-shadow: 0 0 0 3px colorRgba($primary-500, 0.3);
+        }
+        &:active {
+            background: $primary-700;
+        }
+    }
+
+    &.line {
+        background: transparent;
+        color: $dark-900;
+        border: rem(2px) solid $dark-300;
+        &:hover {
+            border: rem(2px) solid $dark-900;
+        }
+        &:focus {
+            box-shadow: 0 0 0 3px colorRgba($dark-900, 0.1);
+        }
+        &:active {
+            background: $dark-300;
+        }
+    }
+
+    &.disabled {
+        background: $dark-200;
+        color: $dark-600;
+        pointer-events: none;
+    }
+    
+}
+
+@each $size in $sizeKeys {
+    .size-#{$size} {
+        padding: rem(map-get($button-padding-y, $size)) rem(map-get($button-padding-x, $size));
+        font-size: rem(map-get($button-font-size, $size));
+    }
+}

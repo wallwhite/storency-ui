@@ -1,0 +1,209 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:color";
+
+
+$breakpoints: (
+    xs: 320px,
+    sm: 768px,
+    md: 960px,
+    lg: 1200px,
+    xl: 1536px,
+);
+$html-font-size: 16px;
+
+@mixin dark {
+    body.dark {
+        @content;
+    }
+}
+
+@mixin cover {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+@function stripUnit($value) {
+    @return math.div($value, $value * 0 + 1);
+}
+
+@function rem($pxValue) {
+    @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}rem;
+}
+
+@function colorRgba($hexColor, $opacity) {
+    @return rgba(
+        color.red($hexColor),
+        color.green($hexColor),
+        color.blue($hexColor),
+        $opacity,
+    );
+}
+
+@mixin respond($breakpoint) {
+    @media screen and (max-width: #{map.get($breakpoints, $breakpoint)} ) {
+        @content;
+    }
+}
+
+@mixin respondFrom($breakpoint) {
+    @media screen and (min-width: #{map.get($breakpoints, $breakpoint)} ) {
+        @content;
+    }
+}
+
+@mixin rDesktopLarge {
+    @media only screen and (max-width: "1439px") {
+        @content;
+    }  
+}
+
+@mixin rDesktop {
+    @media only screen and (max-width: "1199px") {
+        @content;
+    }  
+}
+
+@mixin rTablet {
+    @media only screen and (max-width: "1023px") {
+        @content;
+    }  
+}
+
+@mixin rMobile {
+    @media only screen and (max-width: "767px") {
+        @content;
+    }  
+}
+
+@mixin placeholder-color($color) {
+    &::input-placeholder {
+        color: $color;
+    }
+
+    &::placeholder {
+        color: $color;
+        opacity: 1;
+    }
+
+    &:placeholder {
+        color: $color;
+        opacity: 1;
+    }
+
+    &:input-placeholder {
+        color: $color;
+    }
+}
+
+@mixin placeholder-font-family($font-family) {
+    &::input-placeholder {
+        font-family: $font-family;
+    }
+
+    &::placeholder {
+        font-family: $font-family;
+    }
+
+    &:placeholder {
+        font-family: $font-family;
+    }
+
+    &:input-placeholder {
+        font-family: $font-family;
+    }
+}
+
+@mixin set-icon-size($size) {
+    width: $size;
+    height: $size;
+    background-size: $size;
+}
+
+@mixin size($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin pseudo-element($pseudo-element: after, $content: '', $position: absolute) {
+    @if  $pseudo-element == all {
+        &::after,
+        &::before {
+            content: $content;
+            position: $position;
+            display: block;
+            @content;
+        }
+    } @else {
+        &:#{$pseudo-element} {
+            content: $content;
+            position: $position;
+            display: block;
+            @content;
+        }
+    }
+}
+
+@mixin font-style($family, $size: null, $color: null, $line-height: null) {
+    font-family: $family;
+    font-size: $size;
+    color: $color;
+    line-height: $line-height;
+}
+
+@mixin visibility($visibility, $opacity) {
+    visibility: $visibility;
+    opacity: $opacity;
+}
+
+@mixin flex($type: default, $display: flex, $direction: null, $align-items: null, $justify-content: null) {
+    display: $display;
+    flex-direction: $direction;
+    @if $type == center {
+        justify-content: center;
+        align-items: center;
+    } @else if $type == between-center {
+        justify-content: space-between;
+        align-items: center;
+    } @else if $type == start {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin css-triangle($color, $direction, $size: 8px, $position: absolute) {
+    @include size(0);
+
+    content: '';
+    position: absolute;
+
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        border-bottom: 0;
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        border-top: 0;
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+    }
+}
+
+@mixin box-shadow($type, $position: top) {
+    @if $type == 1 {
+        box-shadow: 0 4px 24px rgba($dark, .12);
+    }
+}

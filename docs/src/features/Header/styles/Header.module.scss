@@ -1,0 +1,63 @@
+@import 'helpers.scss';
+
+.header {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    padding: 16px 0;
+    border-bottom: 1px solid $border;
+    align-items: center;
+    position: fixed;
+    background: $dark-50;
+    backdrop-filter: blur(16px);
+    z-index: 1;
+}
+
+.headerContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.headerCol {
+    display: flex;
+}
+
+.logoWrapper {
+    align-items: center;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logoPic {
+    height: 38px;
+    width: auto;
+    margin-right: 32px;
+}
+
+.logoHint {
+    margin-top: 4px;
+    padding: 8px 0 8px 32px;
+    border-left: 1px solid #E6E8EC;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #B1B5C4;
+}
+
+.logoText { 
+    color: #23262F;
+    font-family: 'Inter';
+    display: inline-flex;
+    font-weight: 900;
+    max-height: 40px;
+    margin-right: 32px;
+    font-size: 24px;
+}

@@ -1,0 +1,69 @@
+html {
+    height: 100%;
+    
+    &.no-scroll {
+      overflow: hidden;
+    }
+}
+
+body {
+    min-width: 320px;
+    font-family: $inter-font;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    line-height: 1.3;
+    color: $dark-900;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+.desktop {
+  &-hide {
+    @include rDesktop {
+      display: none!important;
+    }
+  }
+
+  &-show {
+    display: none;
+
+    @include rDesktop {
+      display: flex;
+    }
+  }
+}
+
+.tablet {
+ &-hide {
+    @include rTablet {
+      display: none!important;
+    }
+  }
+
+  &-show {
+    display: none;
+
+    @include rTablet {
+      display: flex;
+    }
+  }
+}
+
+.mobile {
+  &-hide {
+    @include rMobile {
+      display: none!important;
+    }
+  }
+
+  &-show {
+    display: none!important;
+
+    @include rMobile {
+      display: flex!important;
+    }
+  }
+}

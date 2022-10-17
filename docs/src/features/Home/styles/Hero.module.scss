@@ -1,0 +1,62 @@
+@import 'helpers.scss';
+
+.hero {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  padding: rem(64px) 0;
+  background: $dark-50;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width:rem(660px);
+  padding: 0 rem(60px);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  padding: rem(4px) 0;
+  font-weight: 800;
+  font-size: rem(36px);
+  line-height: rem(36px);
+  letter-spacing: rem(0.15px);
+  background: radial-gradient(111.88% 115.28% at 109.37% 6.94%, #FFCF14 10%, #EE8FFF 55.86%, #38DEFF 160%);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: 4s rotate-text-bg infinite alternate;
+}
+
+.subtitle {
+  color: $dark-600;
+  font-family: $montserrat-font;
+  font-weight: 400;
+  line-height: rem(26px);
+  padding: rem(16px) 0;
+}
+
+.buttons {
+  margin-top: rem(24px);
+  display: flex;
+  max-width: rem(350px);
+  gap: rem(24px);
+  a {
+    gap: rem(12px);
+  }
+
+  @include rMobile {
+    flex-direction: column;
+  }
+}
+
+@keyframes rotate-text-bg {
+  to {
+    background-position: 100% 200%;
+  }
+}

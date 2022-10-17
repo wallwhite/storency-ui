@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es2020", "dom", "dom.iterable", "esnext"],
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "noErrorTruncation": false,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "paths": {
+      "@storency-ui/components": ["./packages/components/src"],
+      "@storency-ui/hooks": ["./packages/hooks/src"],
+      "@storency-ui/constants/*": ["./packages/constants/src"],
+      "@storency-ui/types/*": ["./packages/types/src"],
+      "@storency-ui/utils/*": ["./packages/utils/src"],
+    },
+    "types": ["node"]
+  },
+  "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["**/.*/", "**/build", "**/node_modules", "docs/export", "**/scripts"],
+}

@@ -1,0 +1,35 @@
+@import 'helpers.scss';
+
+.footer {
+  background: $dark-100;
+  display: flex;
+  width: 100%;
+  height: 80px;
+
+  @include rMobile {
+    height: fit-content;
+  }
+}
+
+.footerContent {
+  display: flex;
+  width: 100%;
+  align-items: center; 
+  justify-content: space-between;
+  padding: 0 rem(20px);
+  border-top: 1px solid $dark-300;
+  
+  @include rMobile {
+    padding-top: rem(16px);
+    flex-direction: column-reverse;
+  }
+}
+
+.copyright {
+  color: $dark-700;
+  
+  @include rMobile {
+    margin: rem(16px) 0;
+    text-align: center;
+  }
+}

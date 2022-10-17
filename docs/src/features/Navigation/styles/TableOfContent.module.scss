@@ -1,0 +1,46 @@
+@import "helpers.scss";
+
+.toc {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: $dark-900;
+  font-size: rem(16px);
+  line-height: rem(19px);
+  margin-bottom: rem(24px);
+  letter-spacing: rem(0.1px);
+}
+
+.orderedList {
+  display: flex;
+  flex-direction: column;
+  gap: rem(14px);
+}
+
+.listItem {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  
+  .link {
+    width: 100%;
+    color: colorRgba($dark-700, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &.active {
+      color: $primary-500;
+    }
+    &:hover {
+      color: $dark-800;
+    }
+  }
+  .nestedIcon {
+    display: inline-flex;
+    align-items: center;
+    margin-left: rem(8px);
+  }   
+}

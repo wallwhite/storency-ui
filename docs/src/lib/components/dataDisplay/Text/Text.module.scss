@@ -1,0 +1,20 @@
+@import 'helpers.scss';
+
+$sizeKeys: 's', 'm', 'l';
+
+$text-size: (
+    s: 14px,
+    m: 16px,
+    l: 18px,
+);
+
+.text {
+    display: inline;
+    font-family: $inter-font;
+    font-size: 14px;
+}
+@each $size in $sizeKeys {
+    .textSize-#{$size} {
+        font-size: map-get($text-size, $size);
+    }
+}

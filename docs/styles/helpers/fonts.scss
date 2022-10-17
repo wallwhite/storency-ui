@@ -1,0 +1,90 @@
+/* stylelint-disable scss/dollar-variable-pattern */
+$fontInterBase: 'Inter';
+$fontFiraBase: 'Fira-Mono';
+$fontMontserratBase: 'montserrat-v25-latin_cyrillic';
+$fontsTypeInter: (
+    '600',
+    '500',
+    '800',
+    '700',
+    'Regular',
+);
+$fontsTypeFiraMono: (
+    'Medium',
+    'Regular',
+);
+$fontsTypeMontserrat: (
+    '500',
+    '600',
+    '700',
+    '800',
+    'regular',
+);
+
+
+@each $font in $fontsTypeInter {
+  @font-face {
+      font-family: Inter;
+      @if $font == Regular {
+        font-weight: normal;
+      } @else {
+        font-weight: #{$font};
+      }
+
+      font-display: swap;
+      font-style: normal;
+      src: url('/fonts/#{$fontInterBase}-#{$font}.eot');
+      src:
+          url('/fonts/#{$fontInterBase}-#{$font}.eot?#iefix') format('embedded-opentype'),
+          url('/fonts/#{$fontInterBase}-#{$font}.woff2') format('woff2'),
+          url('/fonts/#{$fontInterBase}-#{$font}.woff') format('woff'),
+          url('/fonts/#{$fontInterBase}-#{$font}.ttf') format('truetype'),
+          url('/fonts/#{$fontInterBase}-#{$font}.svg##{$font}') format('svg');
+  }
+}
+
+@each $font in $fontsTypeFiraMono {
+  @font-face {
+      font-family: 'Fira Mono';
+      @if $font == Regular {
+        font-weight: normal;
+      } @else {
+        font-weight: #{$font};
+      }
+
+      font-display: swap;
+      font-style: normal;
+      src: url('/fonts/#{$fontFiraBase}-#{$font}.eot');
+      src:
+          url('/fonts/#{$fontFiraBase}-#{$font}.eot?#iefix') format('embedded-opentype'),
+          url('/fonts/#{$fontFiraBase}-#{$font}.woff2') format('woff2'),
+          url('/fonts/#{$fontFiraBase}-#{$font}.woff') format('woff'),
+          url('/fonts/#{$fontFiraBase}-#{$font}.ttf') format('truetype'),
+          url('/fonts/#{$fontFiraBase}-#{$font}.svg##{$font}') format('svg');
+  }
+}
+
+@each $font in $fontsTypeMontserrat {
+  @font-face {
+      font-family: Montserrat;
+      @if $font == regular {
+        font-weight: normal;
+      } @else {
+        font-weight: #{$font};
+      }
+
+      font-display: swap;
+      font-style: normal;
+      src: url('/fonts/#{$fontMontserratBase}-#{$font}.eot');
+      src:
+          url('/fonts/#{$fontMontserratBase}-#{$font}.eot?#iefix') format('embedded-opentype'),
+          url('/fonts/#{$fontMontserratBase}-#{$font}.woff2') format('woff2'),
+          url('/fonts/#{$fontMontserratBase}-#{$font}.woff') format('woff'),
+          url('/fonts/#{$fontMontserratBase}-#{$font}.ttf') format('truetype'),
+          url('/fonts/#{$fontMontserratBase}-#{$font}.svg##{$font}') format('svg');
+  }
+}
+
+$inter-font: 'Inter', sans-serif;
+$montserrat-font: 'Montserrat', sans-serif;
+$fira-mono-font: 'Fira Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;

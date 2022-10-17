@@ -1,0 +1,44 @@
+@import "helpers.scss";
+
+.mdx {
+  &_br {
+
+  }
+  &_hr {
+
+  }
+  &_b {
+
+  }
+  &_link {
+
+  }
+  &_p {
+    display: block;
+    width: 100%;
+    color: $dark-700;
+    margin-top: rem(24px);
+  }
+  &_list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: rem(24px) 0;
+    color: $dark-700;
+  }
+  &_listItem {
+    display: inline;
+    width: 100%;
+    margin: rem(4px) 0;
+  }
+  &_inlineCode {
+    display: inline;
+    font-family: $fira-mono-font;
+    font-size: rem(14px);
+    line-height: 1.2;
+    color: $primary-300;
+    background-color: colorRgba($primary-500, 0.05);
+    padding: 0 rem(4px);
+    border-radius: 4px;
+  }
+}

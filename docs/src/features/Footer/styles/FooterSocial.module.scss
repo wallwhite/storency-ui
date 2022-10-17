@@ -1,0 +1,23 @@
+@import 'helpers.scss';
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.listItem {
+  margin-left: rem(24px);
+
+  &:first-child{
+    margin-left: 0;
+  }
+  a {
+    color: $dark-600;
+    transition: all 0.3s;
+    &:hover {
+      color: $primary-500;
+    }
+  }
+}
+

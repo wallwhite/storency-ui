@@ -1,0 +1,9 @@
+@import 'helpers.scss';
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: $defaultContainerWidth;
+    margin: 0 auto;
+    padding: 0 30px;
+}
