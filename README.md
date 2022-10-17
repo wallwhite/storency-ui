@@ -12,8 +12,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="assets/logo-white.png#gh-dark-mode-only" alt="Logo" width="186" height="32">
-    <img src="assets/logo.png#gh-light-mode-only" alt="Logo" width="186" height="32">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/logo-white.png">
+      <img alt="Storency UI" src="assets/logo.png" width="186" height="32">
+    </picture>
   </a>
 
   <h3 align="center">Storency UI</h3>
