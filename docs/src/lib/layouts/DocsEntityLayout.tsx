@@ -17,7 +17,7 @@ const DocsEntityLayout: React.FC<DocsEntityLayoutProps> = ({ frontMatter, childr
     const slug = frontMatter.slug ?? '';
     const description = frontMatter?.description ?? '';
     const entityGHFilePath = frontMatter?.path ?? '';
-    const blobGHUrl = frontMatter.siteConfig.repo.blobUrl;
+    const blobGHUrl = frontMatter.siteConfig?.repo?.blobUrl;
     const sourceLinkPath = `${blobGHUrl}${entityGHFilePath}`;
 
     const { query, asPath } = useRouter();
@@ -28,12 +28,14 @@ const DocsEntityLayout: React.FC<DocsEntityLayoutProps> = ({ frontMatter, childr
             <div className={styles.entityHeader}>
                 <MDXComponents.h1>{title}</MDXComponents.h1>
                 {description && <MDXComponents.p>{description}</MDXComponents.p>}
-                <div className={styles.externalLinksList}>
-                    <Link className={styles.externalLink} to={sourceLinkPath} target="_blank">
-                        <GithubIcon />
-                        Source
-                    </Link>
-                </div>
+                {blobGHUrl && (
+                    <div className={styles.externalLinksList}>
+                        <Link className={styles.externalLink} to={sourceLinkPath} target="_blank">
+                            <GithubIcon />
+                            Source
+                        </Link>
+                    </div>
+                )}
             </div>
             <div className={styles.sectionTabs}>
                 {tabsData.map(({ id, label, doc }) => {
