@@ -3,7 +3,7 @@
 
 import { allDocs } from 'contentlayer/generated';
 import { RehypeData } from '@/lib/types';
-import { MixedArray, toArray, uniq } from './arrayUtils';
+import { MixedArray, toArray, uniq } from './jsUtils';
 
 export const getDocByType = (id: string): any[] =>
     allDocs.filter((doc: { slug: string }) => doc.slug.startsWith(`/docs/${id}`));

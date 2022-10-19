@@ -7,8 +7,8 @@ import { getDocByType, getDocDoc, uniq } from '@/lib/utils';
 import { RehypeData } from '@/lib/types';
 import { DocsEntityLayout } from '@/lib/layouts';
 
-const DocsPage: NextPage<Record<'doc', RehypeData>> = ({
-    doc: { title = '', description = '', frontMatter, body },
+const DocsPage: NextPage<Record<'content', RehypeData>> = ({
+    content: { title = '', description = '', frontMatter, body },
 }) => {
     const Component = useMDXComponent(body?.code);
 
@@ -26,7 +26,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (ctx: GetStaticPropsContext) => ({
-    props: { doc: getDocDoc(['components', ctx?.params?.slug ?? '']) },
+    props: { content: getDocDoc(['components', ctx?.params?.slug ?? '']) },
 });
 
 export default DocsPage;

@@ -3,6 +3,7 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".contentlayer/generated"],
   "exclude": ["node_modules","scripts"],
   "compilerOptions": {
+    "target": "es2015",
     "allowJs": true,
     "isolatedModules": true,
     /* files are emitted by babel */
