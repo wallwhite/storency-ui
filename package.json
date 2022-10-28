@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@wallwhite/eslint-config-react-ts": "^0.1.5",
+    "prettier": "^2.7.1",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.5",
     "stylelint": "^14.14.0",
@@ -25,7 +26,5 @@
     "docs",
     "packages/*"
   ],
-  "dependencies": {
-    "prettier": "^2.7.1"
-  }
+  "packageManager": "yarn@1.22.15"
 }
