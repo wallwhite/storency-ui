@@ -1,4 +1,4 @@
-@import 'helpers.scss';
+@import 'helpers';
 
 .wrapper {
   display: inline-flex;
@@ -6,14 +6,8 @@
   position: relative;
   width: 100%;
   color: $dark-900;
-  margin-bottom: rem(12px);
-
-  &:hover {
-    .hashLink {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
+  margin-bottom: rem(4px);
+  margin-top: rem(48px);
 
   h1,
   h2,
@@ -29,18 +23,23 @@
     font-size: rem(28px);
     font-weight: 800;
   }
+
   h2 {
     font-size: rem(24px);
   }
+
   h3 {
     font-size: rem(20px);
   }
+
   h4 {
     font-size: rem(18px);
   }
+
   h5 {
     font-size: rem(16px);
   }
+
   h6 {
     font-size: rem(14px);
   }
@@ -57,8 +56,16 @@
     z-index: 2;
   }
 
+  &:hover {
+    .hashLink {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
   .hash {
     @include size(rem(24px));
+
     display: inline-flex;
     align-items: center;
     justify-content: center;

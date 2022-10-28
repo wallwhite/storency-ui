@@ -1,4 +1,4 @@
-@import 'helpers.scss';
+@import 'helpers';
 
 .categories {
   padding: rem(56px) 0;
@@ -9,7 +9,7 @@
   flex-wrap: wrap;
   gap: rem(16px);
   justify-content: center;
-  max-width: rem(1080px);
+  max-width: rem(980px);
   margin: 0 auto;
 }
 

@@ -4,6 +4,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "docs:build": "yarn workspace docs build",
+    "docs:start": "yarn workspace docs start",
     "docs:dev": "yarn workspace docs dev",
     "docs:dev:full": "yarn workspace docs dev:full",
     "postinstall": "yarn-deduplicate yarn.lock --strategy highest"
@@ -22,5 +24,8 @@
   "workspaces": [
     "docs",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "prettier": "^2.7.1"
+  }
 }

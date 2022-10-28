@@ -1,4 +1,4 @@
-@import "helpers.scss";
+@import "helpers";
 
 .toc {
   display: flex;
@@ -26,7 +26,7 @@
   
   .link {
     width: 100%;
-    color: colorRgba($dark-700, 0.7);
+    color: color-rgba($dark-700, 0.7);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -34,10 +34,12 @@
     &.active {
       color: $primary-500;
     }
+
     &:hover {
       color: $dark-800;
     }
   }
+
   .nestedIcon {
     display: inline-flex;
     align-items: center;

@@ -12,6 +12,11 @@
     "storency",
     "hooks"
   ],
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "react": "^18.2.0",
+    "typescript": "^4.7.3"
+  },
   "peerDependencies": {
     "react": "^18.2.0"
   },

@@ -1,24 +1,19 @@
 import React from 'react';
 import { allGettingStarteds, GettingStarted } from 'contentlayer/generated';
 import { GetStaticPaths, GetStaticPropsContext, GetStaticPropsResult, NextPage } from 'next';
-import { useMDXComponent } from 'next-contentlayer/hooks';
 import { toArray } from '@/lib/utils';
 import { DocsEntityLayout } from '@/lib/layouts';
-import { MDXComponents } from '@/features/Mdx/components';
+import { MDXRenderer } from '@/features/Mdx/components';
 
 type GettingStartedArticleProps = Record<'content', GettingStarted>;
 
 const GettingStartedArticle: NextPage<GettingStartedArticleProps> = ({
     content: { title = '', description = '', frontMatter, body },
-}) => {
-    const Component = useMDXComponent(body?.code);
-
-    return (
-        <DocsEntityLayout title={title} description={description} frontMatter={frontMatter} toc={frontMatter.headings}>
-            <Component components={MDXComponents} />
-        </DocsEntityLayout>
-    );
-};
+}) => (
+    <DocsEntityLayout title={title} description={description} frontMatter={frontMatter} toc={frontMatter.headings}>
+        <MDXRenderer code={body?.code} />
+    </DocsEntityLayout>
+);
 
 export const getStaticPaths: GetStaticPaths = () => {
     const paths = allGettingStarteds

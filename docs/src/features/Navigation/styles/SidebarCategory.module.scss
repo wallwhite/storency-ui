@@ -1,5 +1,5 @@
 @use "sass:map";
-@import 'helpers.scss';
+@import 'helpers';
 
 $sidebarColors: (
   blue: $primary-400,
@@ -21,11 +21,12 @@ $sidebarColors: (
     .title {
       color: $dark-900;
     }
+
     .icon {
       @each $colorName , $colorValue in $sidebarColors {
         &-color-#{$colorName} {
           background: linear-gradient(to bottom, $border, $colorValue);
-          box-shadow: 0 2px 6px 0 colorRgba($colorValue, .4);
+          box-shadow: 0 2px 6px 0 color-rgba($colorValue, .4);
         }
       }
     }
@@ -36,18 +37,19 @@ $sidebarColors: (
       color: $primary-500;
       font-weight: 700;
     }
+
     .icon {
       @each $colorName , $colorValue in $sidebarColors {
         &-color-#{$colorName} {
           background: linear-gradient(to bottom, $border, $colorValue);
-          box-shadow: 0 2px 6px 0 colorRgba($colorValue, .4);
+          box-shadow: 0 2px 6px 0 color-rgba($colorValue, .4);
         }
       }
     }
   }
 
   .title {
-    color: colorRgba($dark-900, .8);    
+    color: color-rgba($dark-900, .8);    
     font-weight: 600;
     letter-spacing: 0.2px;
     transition: all .1s;
@@ -55,6 +57,7 @@ $sidebarColors: (
 
   .icon {
     @include size(rem(32px));
+
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -74,11 +77,13 @@ $sidebarColors: (
 
     .iconContent {
       @include size(100%);
+
       display: inline-flex;
       justify-content: center;
       align-items: center;
       background: $dark-50;
       border-radius: rem(7px);
+
       > svg {
         @include size(rem(20px));
       }

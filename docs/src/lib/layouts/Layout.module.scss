@@ -10,7 +10,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  padding: 0 0 0 rem(266px);
+  padding: 0 0 0 rem(256px);
   width: 100%;
   @include rTablet {
     padding-right: 0;
@@ -18,17 +18,29 @@
 }
 
 .contentWithToc {
-  padding: 0 rem(266px);
+  padding: 0 rem(282px) 0 rem(256px);
+  
+  @include rTablet {
+    padding: 0 0 0 rem(256px);
+  }
+
+  @include rMobile {
+   padding: 0;
+  }
 }
 
 .sidebar {
   display: flex;
   position: fixed;
-  width: rem(266px);
+  width: rem(230px);
   height: 100vh;
   padding: 0 rem(8px);
   overflow-y: auto;
   z-index: 2;
+
+  @include rMobile {
+    display: none;
+  }
 }
 
 .tocBar {
@@ -50,7 +62,10 @@
   flex-direction: column;
   width: 100%;
   margin-bottom: rem(24px);
+}
 
+.entityHeaderTitle {
+  margin-top: rem(18px)!important;
 }
 
 .externalLinksList {
@@ -71,7 +86,7 @@
   &:hover{
     color: $dark-800;
     transform: translateY(-2px);
-    box-shadow: 0 2px 4px -2px colorrgba($dark-500, 0.3);
+    box-shadow: 0 2px 4px -2px color-rgba($dark-500, 0.3);
   }
 
   &:active{
@@ -86,7 +101,6 @@
 .sectionTabs {
   display: flex;
   width: 100%;
-  margin-bottom: rem(24px);
   border-bottom: 1px solid $border;
 
   .tab {

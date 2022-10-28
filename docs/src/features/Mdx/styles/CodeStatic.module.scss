@@ -1,0 +1,25 @@
+@import 'helpers';
+
+.line {
+  display: flex;
+
+  &.highlighted {
+    background: color-rgba($primary-200, 0.08);
+    width: 100%;
+  }
+}
+
+.lineNumber {
+  background-color: $dark-100;
+  left: rem(14px);
+  position: absolute;
+  text-align: end;
+  padding-right: rem(8px);
+  border-right: 1px solid $dark-300;
+  margin-right: rem(12px);
+  color: $dark-600;
+
+  &.highlighted {
+    border-right: 2px solid $primary-300;
+  } 
+}
