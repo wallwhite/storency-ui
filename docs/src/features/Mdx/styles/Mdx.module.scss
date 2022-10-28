@@ -1,44 +1,254 @@
-@import "helpers.scss";
+@import "helpers";
 
 .mdx {
-  &_br {
-
+  br {
+    font-size: rem(14px);
+    line-height: 1;
   }
-  &_hr {
-
+  
+  hr {
+    margin: rem(14px) 0;
+    border: 1px solid $border;
+    border-top: none;
+    border-left: none;
+    border-right: none;
   }
-  &_b {
 
-  }
-  &_link {
-
-  }
-  &_p {
+  p,
+  &P {
     display: block;
     width: 100%;
     color: $dark-700;
-    margin-top: rem(24px);
+    margin-top: rem(16px);
   }
-  &_list {
+
+  &Blockquote{
+    position: relative;
     display: flex;
-    width: 100%;
     flex-direction: column;
-    margin: rem(24px) 0;
-    color: $dark-700;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background: color-rgba($primary-300, 0.1);
+    padding: rem(16px) rem(24px);
+    margin-top: rem(16px);
+    border: 1px solid #dbe9fd;
+    border-left: none;
+
+    >* {
+      margin-top: 0;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    @include pseudo-element{
+      background: $primary-300;
+      width: rem(8px);
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
   }
-  &_listItem {
-    display: inline;
+
+  &Pre {
+    background: $dark-500;
+  }
+
+  &List {
+    display: flex;
+    flex-direction: column;
+    margin: rem(12px) 0 0 rem(20px);
+    color: $dark-700;
+    list-style-type: disc;
+
+    &[class*="contains-task-list"] {
+      list-style-type: none;
+      margin-left: 0;
+    }
+  }
+
+  &ListItem {
     width: 100%;
     margin: rem(4px) 0;
+
+    &[class*="task-list-item"] {
+      position: relative;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      font-size: rem(16px);
+    }
   }
-  &_inlineCode {
+
+  &InlineCode {
     display: inline;
     font-family: $fira-mono-font;
     font-size: rem(14px);
     line-height: 1.2;
     color: $primary-300;
-    background-color: colorRgba($primary-500, 0.05);
+    background-color: color-rgba($primary-500, 0.05);
     padding: 0 rem(4px);
     border-radius: 4px;
   }
+
+  &Table {
+    display: grid;
+    position: relative;
+    width: 100%;
+    margin-top: rem(16px);
+    background: transparent;
+  }
+
+  &TableHead {
+    background: $dark-200;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: rem(8px) 0;
+    
+    @include rMobile {
+      display: none;
+    }
+  }
+
+  &TableBody {
+    margin-top: rem(8px);
+  }
+
+  &TableRow {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    border-top: 1px solid $border;
+
+    &:first-child {
+      border: none;
+    }
+
+    &:last-child:not(:first-child) {
+      border-bottom: 1px solid $border;
+    }
+
+    @include rMobile {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid $dark-200;
+      border-radius: 12px;
+      background: $dark-100;
+      margin-bottom: rem(12px);
+
+      &:first-child {
+        border: 1px solid $dark-200;
+      }
+
+      &:last-child:not(:first-child) {
+        border: 1px solid $dark-200;
+      }
+    }
+  }
+
+  &TableCell {
+    display: grid;
+    align-items: center;
+    padding: rem(8px) rem(16px);
+
+    .content {
+      color: $dark-600;
+      font-size: rem(14px);
+    
+      @include rMobile {
+        grid-area: content;
+        color: $dark-700;
+        font-weight: 200;
+      }
+    }
+
+    .title {
+      color: $dark-600;
+      display: none;
+      font-weight: 600;
+      text-transform: capitalize;
+    
+      @include rMobile {
+        grid-area: title;
+        display: inline-flex;
+      }
+    }
+
+    @include rMobile {
+      grid-template-areas: "title content";
+      grid-template-columns: 33% 1fr;
+      align-items: start;
+      width: 100%;
+      gap: 8px;
+    }
+  }
+
+  &TableHeadCell {
+    color: $dark-600;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: rem(10px);
+    text-align: start;
+    padding: 0 rem(16px);
+  }
+
+
+  &Link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: $dark-700;
+    font-weight: 700;
+    padding: rem(2px) rem(6px);
+    transition: all .3s;
+
+    @include pseudo-element {
+      width: 100%;
+      height: rem(1px);
+      bottom: 0;
+      left: 0;
+      background: $primary-400;
+    }
+
+    &:hover{
+      color: $dark-900;
+
+      @include pseudo-element {
+        height: rem(2px);
+      }
+    }
+
+    &:active{
+      background: $dark-300;
+    }
+
+    > svg {
+      margin-right: rem(12px) ;
+    }
+  }
+
+  &CheckboxMark {
+    @include size(rem(32px));
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: $dark-200;
+    color: $dark-600;
+    border-radius: 50%;
+    margin-right: rem(24px);
+
+    &.checked{
+      background: $alerts-success;
+      color: $dark-50;
+    }
+
+    &.unchecked{
+      background: $alerts-error;
+      color: $dark-50;
+    }
+  }
+
 }

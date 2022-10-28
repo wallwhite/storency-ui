@@ -21,6 +21,7 @@
       "@/styles/*": ["./styles/*"],
       "@/pages/*": ["./pages/*"],
       "@/configs/*": ["./configs/*"],
+      "@/lib/*": ["./src/lib/*"],
       "contentlayer/generated": ["./.contentlayer/generated"],
       "@storency-ui/components": ["../packages/components/src"],
       "@storency-ui/hooks": ["../packages/hooks/src"],

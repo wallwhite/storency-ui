@@ -1,0 +1,114 @@
+@import 'helpers';
+
+$dot-size: 1px;
+$dot-space: 8px;
+$grid-color: color-rgba($dark-400, 0.1);
+
+.preview {
+  background-color: $dark-100;
+  background-image: 
+    linear-gradient($grid-color 1px, transparent 1px),
+    linear-gradient(90deg, $grid-color 1px, transparent 1px),
+    linear-gradient($grid-color 1px, transparent 1px),
+    linear-gradient(90deg, $grid-color 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 12px 12px, 12px 12px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+  display: flex;
+  padding: rem(32px);
+  margin-bottom: rem(16px);
+  border: 1px solid $border;
+  border-radius: 12px;
+}
+
+.previewCard {
+  background-color: $dark-50;
+  padding: rem(16px);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgb(29 0 112 / 8%);
+  border-radius: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin: rem(16px) 0;
+  font-size: rem(18px);
+  font-weight: 700;
+}
+
+.pulse {
+  @include size(rem(12px));
+
+  position: relative;
+  display: inline-flex;
+  margin: 0 rem(16px) 0 rem(8px);
+  @include pseudo-element {
+    width: rem(2px);
+    height: rem(16px);
+    background: $dark-200;
+    border-radius: 2px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: rem(2px);
+    z-index: -1;
+  }
+  
+}
+
+.pulseDot {
+  @include size(rem(32px));
+
+  top: 6px;
+  left: 6px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  @include pseudo-element(before){
+    @include size(rem(12px));
+
+    background: $primary-500;
+    border-radius: 50%;
+    animation: pulse-dot 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;;
+  }
+
+  @include pseudo-element(after){
+    @include size(rem(32px));
+
+    background: $primary-500;
+    border-radius: 50%;
+    animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    z-index: 2;
+  }
+}
+
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(.33);
+  }
+
+  80%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(.8);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(.8);
+  }
+}

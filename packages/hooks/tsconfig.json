@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "extends": "../../tsconfig.json",
+    "baseUrl": "./",
+    "outDir": "./build",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "noEmit": true,
+    "incremental": true,
+  },
+  "include": ["next-env.d.ts", "./src/*"],
+  "exclude": ["node_modules"]
+}

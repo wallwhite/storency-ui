@@ -1,19 +1,18 @@
-@import 'helpers.scss';
+@use "sass:map";
+@import 'helpers';
 
-$sizeKeys: 's', 'm', 'l';
 
+$size-keys: 's', 'm', 'l';
 $button-padding-x: (
     s: 16px,
     m: 16px,
     l: 24px,
 );
-
 $button-padding-y: (
     s: 6px,
     m: 12px,
     l: 16px,
 );
-
 $button-font-size: (
     s: 12px,
     m: 14px,
@@ -38,12 +37,15 @@ $button-font-size: (
     &.default {
         background: $dark-900;
         color: $dark-50;
+
         &:hover {
             background: $dark-800;
         }
+
         &:focus {
-            box-shadow: 0 0 0 3px colorRgba($dark-900, 0.2);
+            box-shadow: 0 0 0 3px color-rgba($dark-900, 0.2);
         }
+
         &:active {
             background: $dark-200;
             color: $dark-900;
@@ -53,12 +55,15 @@ $button-font-size: (
     &.primary {
         background: $primary-500;
         color: $dark-200;
+
         &:hover {
             background: $primary-600;
         }
+
         &:focus {
-            box-shadow: 0 0 0 3px colorRgba($primary-500, 0.3);
+            box-shadow: 0 0 0 3px color-rgba($primary-500, 0.3);
         }
+
         &:active {
             background: $primary-700;
         }
@@ -68,14 +73,34 @@ $button-font-size: (
         background: transparent;
         color: $dark-900;
         border: rem(2px) solid $dark-300;
+
         &:hover {
             border: rem(2px) solid $dark-900;
         }
+
         &:focus {
-            box-shadow: 0 0 0 3px colorRgba($dark-900, 0.1);
+            box-shadow: 0 0 0 3px color-rgba($dark-900, 0.1);
         }
+
         &:active {
             background: $dark-300;
+        }
+    }
+
+    &.white {
+        background: $dark-50;
+        color: $dark-900;
+
+        &:hover {
+            background: $dark-200;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px color-rgba($dark-600, 0.2);
+        }
+
+        &:active {
+            background: $dark-400;
         }
     }
 
@@ -87,9 +112,9 @@ $button-font-size: (
     
 }
 
-@each $size in $sizeKeys {
+@each $size in $size-keys {
     .size-#{$size} {
-        padding: rem(map-get($button-padding-y, $size)) rem(map-get($button-padding-x, $size));
-        font-size: rem(map-get($button-font-size, $size));
+        padding: rem(map.get($button-padding-y, $size)) rem(map.get($button-padding-x, $size));
+        font-size: rem(map.get($button-font-size, $size));
     }
 }

@@ -1,0 +1,99 @@
+@import "helpers";
+
+$code-background: $dark-100;
+$header-background: $dark-200;
+$border-color: $dark-300;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: auto;
+  border-radius: 12px;
+  background: $code-background;
+  border: 1px solid $border-color;
+  margin: rem(16px) 0;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  height: rem(45px);
+  padding: rem(8px);
+  padding-bottom: 0;
+  background: $header-background;
+  color: $dark-700;
+  border-bottom: 1px solid $border-color;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: rem(8px) rem(16px);
+  border-radius: 8px 8px 0 0;
+  color: color-rgba($dark-700, 0.5);
+  top: 1px;
+  transition: all 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    color: $dark-700;
+    background: color-rgba($dark-300, 0.5);
+  }
+
+  &.active{
+    background: $code-background;
+    border: 1px solid $border-color;
+    border-bottom: 1px solid $code-background;
+    padding-bottom: rem(9px);
+    color: $dark-700;
+    font-weight: 500;
+    pointer-events: none;
+  }
+
+  &.wrong {
+    color: $alerts-error;
+    padding-right: rem(32px);
+
+    @include pseudo-element {
+      @include size(rem(8px));
+
+      background: $alerts-error;
+      border-radius: 8px;
+      right: rem(16px);
+      transform: translateX(50%)
+    }
+  }
+}
+
+.fileIcon {
+  @include size(rem(16px));
+
+  margin-right: rem(8px);
+
+  >svg{
+    @include size(100%);
+  }
+}
+
+
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.content {
+  position: relative;
+  padding: rem(24px) rem(16px);
+
+  [class*="prism-code"] {
+    width: fit-content;
+    min-width: 100%;
+  }
+}

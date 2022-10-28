@@ -1,0 +1,18 @@
+@import 'helpers';
+
+.error {
+  display: flex;
+  align-items: center;
+  padding: rem(8px) rem(16px);
+  background-color: color-rgba($alerts-error, 0.08);
+  border: 1px solid color-rgba($alerts-error,0.5);
+  border-radius: 12px;
+  color: $alerts-error;
+  margin-bottom: rem(16px);
+
+  .message {
+    color: color-rgba($alerts-error, 0.95);
+  }
+}
+
+

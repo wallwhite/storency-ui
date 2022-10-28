@@ -7,7 +7,7 @@ interface ButtonOptions {
     to?: string;
     type?: 'button' | 'link' | 'submit';
     size?: 's' | 'm' | 'l';
-    colorMode?: 'default' | 'primary' | 'line';
+    colorMode?: 'default' | 'primary' | 'line' | 'white';
     wide?: boolean;
     disabled?: boolean;
     isActive?: boolean;
@@ -34,7 +34,7 @@ interface ButtonEventHandlers {
     onSubmit?: (e: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
 
-interface ButtonProps extends ButtonOptions, ButtonEventHandlers {}
+export interface ButtonProps extends ButtonOptions, ButtonEventHandlers {}
 
 const Button: React.FC<ButtonProps> = ({
     children,

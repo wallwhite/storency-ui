@@ -1,0 +1,7 @@
+@import 'helpers';
+
+.button {
+  > svg {
+    margin-right: rem(8px);
+  }
+}

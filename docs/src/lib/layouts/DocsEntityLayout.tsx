@@ -11,8 +11,14 @@ import styles from '@/lib/layouts/Layout.module.scss';
 
 interface DocsEntityLayoutProps extends DocsLayoutProps {
     frontMatter: RehypeFrontMatter;
+    slug?: 'hooks' | 'components' | 'utils';
 }
-const DocsEntityLayout: React.FC<DocsEntityLayoutProps> = ({ frontMatter, children, ...props }) => {
+const DocsEntityLayout: React.FC<DocsEntityLayoutProps> = ({
+    frontMatter,
+    slug: entitySlug = 'components',
+    children,
+    ...props
+}) => {
     const title = frontMatter?.title ?? 'Component';
     const slug = frontMatter.slug ?? '';
     const description = frontMatter?.description ?? '';
@@ -21,12 +27,12 @@ const DocsEntityLayout: React.FC<DocsEntityLayoutProps> = ({ frontMatter, childr
     const sourceLinkPath = `${blobGHUrl}${entityGHFilePath}`;
 
     const { query, asPath } = useRouter();
-    const tabsData = getComponentTabsData(['components', query?.slug ?? '']);
+    const tabsData = getComponentTabsData([entitySlug, query?.slug ?? '']);
 
     return (
         <DocsLayout {...props}>
             <div className={styles.entityHeader}>
-                <MDXComponents.h1>{title}</MDXComponents.h1>
+                <MDXComponents.h1 className={styles.entityHeaderTitle}>{title}</MDXComponents.h1>
                 {description && <MDXComponents.p>{description}</MDXComponents.p>}
                 {blobGHUrl && (
                     <div className={styles.externalLinksList}>

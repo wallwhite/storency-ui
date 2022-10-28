@@ -32,7 +32,7 @@ $html-font-size: 16px;
     @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}rem;
 }
 
-@function colorRgba($hexColor, $opacity) {
+@function color-rgba($hexColor, $opacity) {
     @return rgba(
         color.red($hexColor),
         color.green($hexColor),
